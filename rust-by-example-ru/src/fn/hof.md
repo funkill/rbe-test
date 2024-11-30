@@ -32,8 +32,8 @@ fn main() {
     // Функциональный подход
     let sum_of_squared_odd_numbers: u32 =
         (0..).map(|n| n * n)             // Все натуральные числа возводим в квадрат
-             .take_while(||&n_squared| n_squared < upper) // Берём те, что ниже верхнего предела
-             .filter(&n_squared| is_odd(n_squared))     // Выбираем нечётные
+             .take_while(|&n_squared| n_squared < upper) // Берём те, что ниже верхнего предела
+             .filter(|&n_squared| is_odd(n_squared))     // Выбираем нечётные
              .sum(); // Складываем
     println!("функциональный стиль: {}", sum_of_squared_odd_numbers);
 }
